@@ -6,3 +6,11 @@ node_modules/
 #
 distribution
 engine/config.js
+
+# . files
+#
+.env
+
+# Configs
+#
+engine/libs/conf/*

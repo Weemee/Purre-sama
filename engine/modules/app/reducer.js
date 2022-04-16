@@ -1,22 +1,35 @@
-import { INIT_DONE, SET_LOGGED_IN } from './types';
+import { SET_NOTES, CLEAR_NOTES, SET_LOOKUP_DATA, SET_REALTIME_DATA } from './types';
 
 const defaultState = {
-	init: true,
-	x: false,
+	notes: undefined,
+	lookupData: [],
+	realtimeData: [],
 };
 
 export default function (state = defaultState, action) {
 	switch (action.type) {
-		case INIT_DONE:
+		case SET_NOTES:
 			return {
 				...state,
-				init: false,
+				notes: action.payload,
 			};
 
-		case SET_LOGGED_IN:
+		case CLEAR_NOTES:
 			return {
 				...state,
-				x: true,
+				notes: undefined,
+			};
+
+		case SET_LOOKUP_DATA:
+			return {
+				...state,
+				lookupData: action.payload,
+			};
+
+		case SET_REALTIME_DATA:
+			return {
+				...state,
+				realtimeData: action.payload,
 			};
 	}
 
