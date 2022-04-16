@@ -1,0 +1,111 @@
+{
+	"name": "purre-sama",
+	"version": "0.1",
+	"description": "SL App thingy for Purre-sama",
+	"build": {
+		"appId": "SL App thingy for Purre-sama"
+	},
+	"main": "engine/index.js",
+	"scripts": {
+		"start": "webpack serve --content-base engine --progress --color --inline --config webpack.development.js",
+		"start-elec": "concurrently \"cross-env BROWSER=none yarn res\" \"wait-on http://192.168.1.202:8193 && electron .\"",
+		"res": "webpack-dev-server --progress --colors --inline --config webpack.development.js",
+		"lint": "eslint engine",
+		"prebuild": "rimraf distribution",
+		"postinstall": "cp -n engine/config.temp.js engine/config.js",
+		"build": "cross-env NODE_ENV=production webpack --progress --config webpack.production.js",
+		"redux": "redux-devtools --hostname=localhost --port=8000",
+		"electron-build": "electron-builder"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Weemee/purre-sama.git"
+	},
+	"engines": {
+		"node": ">=8.9.4"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version"
+		]
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Weemee/purre-sama/issues"
+	},
+	"homepage": "https://github.com/Weemee/purre-sama#readme",
+	"dependencies": {
+		"@loadable/component": "^5.14.1",
+		"@mui/icons-material": "^5.1.1",
+		"@mui/lab": "^5.0.0-alpha.55",
+		"@mui/material": "^5.1.1",
+		"@mui/styles": "^5.1.1",
+		"@svgr/webpack": "^5.5.0",
+		"@types/prop-types": "^15.7.4",
+		"clean-webpack-plugin": "^3.0.0",
+		"clsx": "^1.1.1",
+		"compression-webpack-plugin": "^6.1.1",
+		"concurrently": "^4.1.2",
+		"date-fns": "^2.28.0",
+		"history": "^4.7.2",
+		"json-loader": "^0.5.7",
+		"jsonwebtoken": "^8.2.1",
+		"prop-types": "^15.7.2",
+		"react": "^17.0.2",
+		"react-beforeunload": "^2.1.0",
+		"react-color": "^2.14.1",
+		"react-dom": "^17.0.2",
+		"react-loadable": "^5.5.0",
+		"react-markdown": "^7.1.0",
+		"react-redux": "^7.2.1",
+		"react-router": "^5.2.0",
+		"react-router-dom": "^5.2.0",
+		"redux": "^4.0.5",
+		"redux-saga": "^0.16.2",
+		"sw-precache-webpack-plugin": "^1.0.0",
+		"wait-on": "^3.3.0",
+		"webpack-manifest-plugin": "^2.2.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.14.5",
+		"@babel/core": "^7.14.6",
+		"@babel/node": "^7.14.7",
+		"@babel/preset-env": "^7.14.7",
+		"@babel/preset-react": "7.14.5",
+		"babel-eslint": "^8.2.3",
+		"babel-loader": "^8.2.2",
+		"babel-plugin-module-resolver": "^4.1.0",
+		"babel-plugin-transform-class-properties": "^6.24.1",
+		"babel-polyfill": "^6.26.0",
+		"connected-react-router": "^6.8.0",
+		"cross-env": "^5.2.1",
+		"css-loader": "^0.28.11",
+		"eslint": "^7.28.0",
+		"eslint-plugin-babel": "^4.1.2",
+		"eslint-plugin-react": "^7.8.2",
+		"eslint-plugin-react-hooks": "^4.1.0",
+		"file-loader": "^1.1.11",
+		"html-webpack-plugin": "^4.3.0",
+		"js-yaml": "^3.12.1",
+		"node-sass": "^6.0.1",
+		"node-sass-utils": "^1.1.2",
+		"raw-loader": "^1.0.0",
+		"remote-redux-devtools": "^0.5.16",
+		"rimraf": "^2.6.2",
+		"sass-loader": "6.0.7",
+		"style-loader": "^0.20.3",
+		"svgo": "^1.0.5",
+		"svgo-loader": "^2.1.0",
+		"webpack": "^4.44.2",
+		"webpack-cli": "^4.3.1",
+		"webpack-dev-server": "^3.11.1",
+		"webpack-livereload-plugin": "^3.0.1",
+		"write-file-webpack-plugin": "^4.5.0"
+	}
+}

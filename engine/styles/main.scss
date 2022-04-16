@@ -1,0 +1,44 @@
+span {
+	user-select: none;
+}
+
+.dg .a {
+	float: left;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:link {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: inherit;
+}
+
+a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+html {
+	font-family: sans-serif;
+}
+
+#hover-date-selection-crap:hover {
+	background-color: #8ab4e7 !important;
+}
+
+#hover-chat-area:hover {
+	background-color: #bf48857c !important;
+}
